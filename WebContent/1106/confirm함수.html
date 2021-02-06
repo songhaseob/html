@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<style>
+</style>
+<script>
+	function proc1() {
+		sum = 0;
+		res = "입력 값 : ";
+		
+		while(true){
+			input = parseInt(prompt("정수 입력"));
+			sum += input;
+			res += input + " ";
+			
+			yn = confirm('계속하시겠습니까?');
+			if(!yn) break;
+		}
+		result1 = document.getElementById('result1');
+		result1.innerHTML = res + "<br>";
+		result1.innerHTML += "총합 : " + sum;
+	}
+	function proc2(){
+		res ="";
+		while(true){
+			dan = parseInt(prompt("단수를 입력"));
+			res = dan + "단<br>";
+			
+			yn = confirm('계속하시겠습니까?');
+			if(!yn) break;
+			
+			for (i = 1; i <= 9; i++) {
+				res += `${dan} * ${i} = ${dan*i} <br>`;
+			}
+
+			result2 = document.getElementById('result2');
+			result2.innerHTML += res;
+		}
+		}
+		
+	
+</script>
+</head>
+<body>
+
+	<div class="box">
+		<h3>confirm()</h3>
+		실행중 사용자의 답변을 기다린다<br>
+		yes - true를 return<br>
+		no - false를 return<br>
+		prompt를 이용해서 입력 하고 누적해서 결과를 출력한다<br>
+		한번실행 후 confirm()메서드를 이용해서 계속 할 것인지 여부를 판단한다<br>
+		<input type="button" value="확인" onclick="proc1()">
+		<br>
+		<div id="result1"></div>
+		<br>
+	</div>
+	
+	<div class="box">
+		<h3>confirm() - 구구단 출력</h3>
+		yes - true를 return<br>
+		no - false를 return<br>
+		prompt를 이용해서 구구단 수입력 하고 누적해서 결과를 출력한다<br>
+		한번실행 후 confirm()메서드를 이용해서 계속 할 것인지 여부를 판단한다<br>
+		<input type="button" value="확인" onclick="proc2()">
+		<br>
+		<div id="result2"></div>
+		<br>
+	</div>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<style>
+
+</style>
+<script>
+function proc1() {
+	
+	
+	su1 = parseInt(prompt("정수 입력"));
+	
+	su2 = parseInt(prompt("정수입력"));
+	
+	oper = prompt("연산자를입력");
+	
+	res = "수1 : " + su1 + "<br>";
+	res += "수2 : " + su2 + "<br>";
+	res += "연산자 : " + oper + "<br>";
+	
+	switch(oper){
+	case "+":
+		calc = su1+su2;
+		break;
+	case "-":
+		calc = su1-su2;
+		break;
+	case "*":
+		calc = su1*su2;
+		break;
+	case "/":
+		calc = su1/su2;
+		break;
+	
+	}
+	
+	//res += "결과:" +su1 + "" + oper + "" + su2 + "=" + calc;
+	//백틱
+	res += `결과 : ${su1} ${oper} ${su2} = ${calc}`; 
+	
+	document.getElementById('result').innerHTML = res; 
+	
+}
+function proc2() {
+	//입력
+	jumsu = prompt("성적을 입력하세요");
+	jumsu = parseInt(jumsu/10);
+	
+	res = "점수 : " + jumsu + "<br> 결과:";
+		
+	switch(jumsu){
+	case 10: case 9:
+		res+="A";
+		break;
+	case 8:
+		res+="B";
+		break;
+	case 7:
+		res+="C";
+		break;
+	case 6:
+		res+="D";
+		break;
+	default:
+		res+="F";
+		
+	
+	
+}
+	document.getElementById('result2').innerHTML = res; 
+	
+}
+function proc3() {
+	in1 = prompt("첫번째 사람");
+	in2 = prompt("두번째 사람");
+	
+	res = "첫번째 사람 : " + in1 + "<br>";
+	// res = `첫번째 사람: ${in1} <br>`;
+	res += "두번째 사람 : " + in2 + "<br>";
+	if(in1 == in2){
+		res += "비겼습니다."
+	}else if(in1 =="가위" && in2 == "보"|| 
+			in1 =="바위" && in2 =="가위"|| 
+			in1 =="보" && in2 == "주먹"){
+		res += "첫번째 사람이 이겼습니다";
+	}else{
+		res += "두번째 사람이 이겼습니다."
+	}
+	result3 = document.getElementById('result3');
+	result3.innerHTML = res;
+	
+}
+</script>
+</head>
+<body>
+	<div class="box">
+	<h3>두수연산하기</h3>
+	수1, 수2입력 -prompt()<br>
+	연산자 입력<br>
+	연산자의 따라 두수를 계산 한다<br><br>
+	<input type="button" value="확인" onclick="proc1()">
+	<div id="result"></div>
+	</div>
+	<br>
+	
+	<div class="box">
+	<h3>학점구하기</h3>
+	0~100사이의 값을 입력 - prompt()<br>
+	학점구하기<br><br>
+	<input type="button" value="확인" onclick="proc2()">
+	<div id="result2"></div>
+	</div>
+	
+	<div class="box">
+	<h3>가위바위보</h3>
+	두사람의 가위바위보를 각각 입력- prompt()<br>
+	승자를구하기<br><br>
+	<input type="button" value="확인" onclick="proc3()">
+	<div id="result3"></div>
+	</div>
+	</body>
+</html>

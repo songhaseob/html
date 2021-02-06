@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<style>
+div{
+	margin: 2px;
+	padding: 3px;
+	box-sizing: border-box; /* 보더까지합해서 */
+}
+#header{
+	height: 80px;
+	/* background: yellow; */
+	background-image : linear-gradient(white 50%, pink);
+	border: 1px solid gray;
+	border-radius: 20px; /* 테두리자르기 */
+}
+#nav{
+	width: calc(25% - 1%);
+	height: 500px;
+	float: left;
+	background: #f2d4e5;
+	border-radius: 20px; /* 테두리자르기 */
+}
+#content{
+	width: calc(75% - 1%);
+	height: 500px;
+	float: right;
+	background: green;
+	border-radius: 20px; /* 테두리자르기 */
+}
+#footer{
+	height: 80px;
+	background: pink;
+	clear: both;
+	border-radius: 20px;
+}
+</style>
+</head>
+<body>
+<div id="header"></div>
+<div id="nav"></div>
+<div id="content"></div>
+<div id="footer"></div>
+</body>
+</html>

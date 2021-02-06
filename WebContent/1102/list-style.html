@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	div{
+		width: 170px;
+		height: 250px;
+		border: 5px dotted pink;
+		margin: 5px;
+		padding: 10px;
+		float: left;
+		
+	}
+	/* ul[id-list1]{} */
+	ul#list2{
+	list-style-type: "★";
+	list-style-position: outside; /* inside는 border안으로 들어간다 */
+	}
+	#list3{
+	list-style-type: "→";
+	}
+	#list4{
+	list-style-image: url(../images/check.png)
+	}
+	ul,li{
+	border: 1px solid orange;
+	}
+	hr{
+	clear: both;
+	}
+	#list6{
+	list-style-type: upper-roman/* lower-roman */;
+	}
+	#list7{
+	list-style-type: upper-alpha;
+	}
+	#list8{
+	list-style-type: hangul;  
+	}
+	#list9{
+	list-style-type: korean-hangul-formal; 
+	}
+	#list10{
+	list-style-type: hangul-consonant; 
+	}
+</style>
+</head>
+<body>
+	<div>
+		<h4></h4>
+		<ul id="list1">
+			<li>무궁화</li>
+			<li>개나리</li>
+			<li>진달래</li>
+			<li>수선화</li>
+			<li>라일락</li>
+		</ul>
+	</div>
+	
+	<div>
+	
+		<h4>list-style-type: "★";</h4>
+		<ul id="list2">
+			<li>무궁화</li>
+			<li>개나리</li>
+			<li>진달래</li>
+			<li>수선화</li>
+			<li>라일락</li>
+		</ul>
+	</div>
+	
+	<div>
+		<h4>list-style-type: "→";</h4>
+		<ul id="list3">
+			<li>무궁화</li>
+			<li>개나리</li>
+			<li>진달래</li>
+			<li>수선화</li>
+			<li>라일락</li>
+		</ul>
+	</div>
+	
+	<div>
+		<h4>list-style-image: url(../images/check.png)</h4>
+		<ul id="list4">
+			<li>무궁화</li>
+			<li>개나리</li>
+			<li>진달래</li>
+			<li>수선화</li>
+			<li>라일락</li>
+		</ul>
+	</div>
+	
+	<hr>
+	<div>
+		<h4>list-style-image: url(../images/check.png)</h4>
+		<ol id="list5">
+			<li>무궁화</li>
+			<li>개나리</li>
+			<li>진달래</li>
+			<li>수선화</li>
+			<li>라일락</li>
+		</ol>
+	</div>
+	
+	<div>
+		<h4>list-style-type: upper-roman</h4>
+		<ol id="list6">
+			<li>무궁화</li>
+			<li>개나리</li>
+			<li>진달래</li>
+			<li>수선화</li>
+			<li>라일락</li>
+		</ol>
+	</div>
+	
+	<div>
+		<h4>list-style-image: url(../images/check.png)</h4>
+		<ol id="list7">
+			<li>무궁화</li>
+			<li>개나리</li>
+			<li>진달래</li>
+			<li>수선화</li>
+			<li>라일락</li>
+		</ol>
+	</div>
+	
+	<div>
+		<h4>list-style-type: hangul;  </h4>
+		<ol id="list8">
+			<li>무궁화</li>
+			<li>개나리</li>
+			<li>진달래</li>
+			<li>수선화</li>
+			<li>라일락</li>
+		</ol>
+	</div>
+	
+	<div>
+		<h4>list-style-type: korean-hangul-formal;</h4>
+		<ol id="list9">
+			<li>무궁화</li>
+			<li>개나리</li>
+			<li>진달래</li>
+			<li>수선화</li>
+			<li>라일락</li>
+		</ol>
+	</div>
+	
+	<div>
+		<h4>list-style-type: hangul-consonant; </h4>
+		<ol id="list10">
+			<li>무궁화</li>
+			<li>개나리</li>
+			<li>진달래</li>
+			<li>수선화</li>
+			<li>라일락</li>
+		</ol>
+	</div>
+</body>
+</html>

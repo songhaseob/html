@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	form{
+		width : 300px;
+		border : 1px solid blue;
+		padding: 10px;
+		margin : 10px;
+	}
+	label{
+	display: inline-block;
+	width: 100px;
+	height: 30px;
+}
+#dd{
+	background: lightgray;
+}
+</style>
+</head>
+<body>
+	<form action="input1.jsp" method="post">
+	<h1>이메일 전송화면</h1>
+	<label>이름</label><input type="text" name="name" required="required" placeholder="홍길동"><br>
+	<label>이메일</label><input type="email" name="email" placeholder="hssong@abc.com"><br>
+	<label class = "dd">내용</label><br>
+	<textarea name="area" rows="10" cols="40" placeholder="내용을 입력해주세요!!"></textarea>
+  
+	 <input type="submit" value="전송">
+	 <button type="reset">재설정</button>
+	
+	</form>
+	
+	<form action="input2.jsp" method="post">
+	<h1>회원가입 화면</h1>
+	 <label>이름</label><input type ="text" name="name" pattern="[가-힣]{3,5}"required="required" placeholder="홍길동"><br>
+     <label>주소</label><input type ="text" name="addr" required="required" title="대전시 동구 대동" placeholder="대전시 동구 대동"><br>
+     <label>이메일</label><input type="email" name="email"placeholder="kk123@abc.com"><br>
+     <input type ="radio" name ="Male" value ="메일">Male<br>
+     <input type ="radio" name = "Male" value="에프메일">Fmale<br>
+     <input type="submit" value="Send">
+     <button type="reset">원래대로</button>
+     
+	</form>
+</body>
+</html>

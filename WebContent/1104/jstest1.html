@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<style>
+	
+</style>
+<script type="text/javascript">
+	function proc1() {
+		//alert("hello~~");        /* 팝업창으로 뜬다 */
+		//document.write("hello~");   /* 확인버튼을 누르면 hello로 넘어가서 생성 */
+		
+		/* 확인 밑에 hello가 생성된다 */
+		document.getElementById('result').textContent="hello~~";
+		
+	}
+</script>
+</head>
+<pre>
+확인버튼 클릭하면 proc1() 함수 호출
+함수내에서 출력문 작성 
+alert("hello~~"); 
+-> 팝업창으로 결과를 출력한다
+document.write("hello~"); 
+-> 기존에 만들어져 실행되어있는 문서를 덮어쓴다
+document.getElementById('result').textContent="hello~~"; 
+-> 
+</pre>
+<body>
+	<input type="button" value="확인" onclick="proc1()" >
+	<div id="result"></div>
+</body>
+</html>

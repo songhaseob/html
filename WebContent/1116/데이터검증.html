@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<style>
+
+</style>
+<script>
+	function proc1() {
+		
+	
+		
+	ff = document.getElementById('ff');
+	ff = document.querySelector('#ff');
+	
+	vname = document.getElementById('name');
+	vaddr = document.getElementById('addr');
+	vbir = document.getElementById('birthday');
+	vmail = document.getElementById('email');
+	vid = document.getElementById('userid');
+	vtel = document.getElementById('phone');
+	vpass = document.getElementById('pass');
+	
+	
+		nvalue = vname.value.trim().length;
+		avalue = vaddr.value.trim().length;
+		bvalue = vbir.value.trim().length;
+		mvalue = vmail.value.trim().length;
+		ivalue = vid.value.trim().length;
+		tvalue = vtel.value.trim().length;
+		pvalue = vpass.value.trim().length;
+		
+		if(nvalue < 1){
+			alert("이름 입력");
+			return false; // 이름이 없으면 끝내라
+		}
+		// 이름 길이 2 ~ 4
+		if(nvalue < 2 || nvalue > 4){
+			alert("이름 2 ~ 4");
+			return false;
+		}
+		
+		// 정규식 체크 - test()
+		// 정규식
+		// /^시작하고 $끝난다
+		
+		nameReg = /^[가-힣]{2,4}$/;
+		if(!(nameReg.test(vname.value))){
+			alert("이름형식오류");
+			return false;
+		}
+			
+		
+		if(avalue < 1){
+			alert("주소 입력");
+			return false; 
+		}
+		
+		
+		if(bvalue < 1){
+			alert("생일 입력");
+			return false; 
+		}
+		if(ivalue < 6 || ivalue > 8){
+			alert("아이디 입력");
+			return false; 
+		}
+		
+		// 정규식 - 영문소문자로 시작한다 
+		idReg = /^[a-z][a-zA-Z0-9]{5,7}$/
+		if(!(idReg.test(vid.value))){
+			alert("아이디형식오류");
+			return false;
+		}
+		
+		// 비밀번호
+		if(pvalue < 1){
+			alert("비밀번호 입력..");
+			return false;
+		}
+		if(pvalue < 8 || pvalue > 15){
+			alert("비밀번호 8 ~ 15 사이 입력");
+			return false;
+		}
+		
+		// 정규식
+		// ?=기준문자 : 기준문자를 기준으로 해서 전방(앞의)탐색으로 검색한다
+		// a = http://www.naver.com   https://www.daum.net
+		// http 인지 https인지 비교 - 해당 문자를 직접 가져온다 - value.match(reg)
+		// match()후 해당문자가 있으면 문자를 가져오고 없으면 null을 리턴
+		
+		/*a = "https://www.naver.com";
+		reg = /\w+(?=:)/
+		b = a.match(reg);
+		if(b=="http"){
+			alert("http요청입니다")
+		}else if(b=="https"){
+			alert("https요청입니다")
+			
+		}*/
+		
+		
+		//정규식 - 전방탐색 응용 - 영문소문자,대문자,숫자,특수문자가 반드시 한개이상씩 포함
+		passReg = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,16}$/
+
+		if(!(passReg).test(vpass.value)){
+			alert("비밀번호형식오류");
+			return false;
+		}
+		
+		
+		if(mvalue < 1){
+			alert("이메일 입력");
+			return false; 
+		}
+		// 이메일정규식 abc124@kk123.com, ASDFas12@hgg.co.kr
+		emReg = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z]+){1,2}$/
+
+		if(!(emReg.test(vmail.value))){
+			alert("이메일 형식오류");
+			return false;
+		}
+		
+		if(tvalue < 1){
+			alert("전화번호 입력");
+			return false; 
+		}
+		// 전화번호 정규식
+		telReg = /\d{3}-\d{4}-\d{4}/
+		if(!(telReg.test(vtel.value))){
+			alert("전화번호 오류");
+			return false;
+		}
+		
+		alert("성공");
+	}
+	
+	
+</script>
+</head>
+<body>
+
+	<div class="box">
+		<h3>데이터 길이/공백 검증</h3>
+		trim() : 앞뒤 공백을 제거<br>
+		length<br>
+		<h3>정규식 : 일정한 규칙에 따라 데이터를 입력</h3>
+		정규식패턴.test(입력값) - return 결과형 true/false<br>
+		<h3>회원가입</h3>
+<form id="ff" action="test.jsp" method="post" onsubmit="return false;">
+	이름: <input type='text' id='name' ><br>
+	주소: <input type='text' id='addr' ><br>
+	생일: <input type='date' id='birthday' ><br>
+	아이디(6-8 문자): <input type='text' id='userid' ><br>
+	비밀번호 : <input type='password' id='pass' ><br>
+	이메일: <input type='email' id='email' ><br>
+	휴대폰: <input type='tel' id='phone' ><br>
+	<input type='button' onclick="proc1()" value='확인' ><br> 
+</form>
+		<br>
+	</div>
+</body>
+</html>
